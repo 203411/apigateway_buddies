@@ -22,7 +22,8 @@ serviceEndpoints:
   petsServices:
     url: 'http://34.194.231.115'    #aqui ip del servicio
   requestsServices:
-    url: 'http://52.2.159.146'
+    # url: 'http://52.2.159.146'
+    url: 'http://44.207.32.114'
 policies:
   - basic-auth
   - cors
