@@ -10,11 +10,11 @@ apiEndpoints:
   pets:
     host: 54.147.179.0
     methods: ['GET', 'POST','PUT','DELETE']
-    paths: ['/api/pets','/api/pets/*']
+    paths: ['/api/pets/','/api/pets/*']
   requests:
     host: 54.147.179.0
     methods: ['GET', 'POST','PUT','DELETE']
-    paths: ['/api/requests','/api/requests/*']
+    paths: ['/api/requests/','/api/requests/*']
 
 serviceEndpoints:
   httpbin:
