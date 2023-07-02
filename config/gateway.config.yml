@@ -12,11 +12,17 @@ apiEndpoints:
     host: 54.147.179.0
     methods: ["GET","POST","PUT","DELETE"]
     paths: ["/api/requests","/api/requests/*"]
+  api:
+    host: 54.147.179.0
+    methods: ["GET"]
+    paths: ["/test"]
 serviceEndpoints:
   petsServices:
     url: 'http://34.194.231.115'    #aqui ip del servicio
   requestsServices:
     url: 'http://52.2.159.146'
+  apiServices:
+    url: 'http://localhost:3001'
 policies:
   - basic-auth
   - cors
@@ -36,6 +42,17 @@ pipelines:
       - proxy:
           - action:
               serviceEndpoint: petsServices 
+              changeOrigin: true
+
+  apiPipeline:
+    apiEndpoints:
+      - api
+    policies:
+    # Uncomment `key-auth:` when instructed to in the Getting Started guide.
+    # - key-auth:
+      - proxy:
+          - action:
+              serviceEndpoint: apiServices 
               changeOrigin: true
 
   petsPipeline:
