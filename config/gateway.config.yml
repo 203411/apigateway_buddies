@@ -30,13 +30,13 @@ pipelines:
   default:
     apiEndpoints:
         - pets
-      policies:
-      # Uncomment `key-auth:` when instructed to in the Getting Started guide.
-      # - key-auth:
-        - proxy:
-            - action:
-                serviceEndpoint: petsServices 
-                changeOrigin: true
+    policies:
+    # Uncomment `key-auth:` when instructed to in the Getting Started guide.
+    # - key-auth:
+      - proxy:
+          - action:
+              serviceEndpoint: petsServices 
+              changeOrigin: true
 
   petsPipeline:
     apiEndpoints:
