@@ -22,7 +22,7 @@ serviceEndpoints:
   requestsServices:
     url: 'http://52.2.159.146'
   apiServices:
-    url: 'http://localhost:3001'
+    url: 'http://54.147.179.0:3001'
 policies:
   - basic-auth
   - cors
