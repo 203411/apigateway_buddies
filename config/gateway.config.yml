@@ -23,8 +23,6 @@ serviceEndpoints:
     url: 'http://34.194.231.115'    #aqui ip del servicio
   requestsServices:
     url: 'http://52.2.159.146'
-  apiServices:
-    url: 'http://54.147.179.0:3001'
 policies:
   - basic-auth
   - cors
@@ -46,17 +44,6 @@ pipelines:
               serviceEndpoint: httpbin 
               changeOrigin: true
 
-  apiPipeline:
-    apiEndpoints:
-      - api
-    policies:
-    # Uncomment `key-auth:` when instructed to in the Getting Started guide.
-    # - key-auth:
-      - proxy:
-          - action:
-              serviceEndpoint: apiServices 
-              changeOrigin: true
-
   petsPipeline:
     apiEndpoints:
       - pets
@@ -76,5 +63,5 @@ pipelines:
     # - key-auth:
       - proxy:
           - action:
-              serviceEndpoint: requestsServices 
+              serviceEndpoint: requestsServices
               changeOrigin: true
