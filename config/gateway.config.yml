@@ -4,24 +4,23 @@ admin:
   port: 9876
   host: localhost
 apiEndpoints:
+  pets:
+    host: 54.147.179.0
+    methods: ['GET', 'POST','PUT']
+    paths: ['/api/pets/','/api/pets/*']
   api:
     host: localhost
     paths: '/ip'
-  pets:
-    host: 54.147.179.0
-    methods: ['GET', 'POST','PUT','DELETE']
-    paths: ['/api/pets/','/api/pets/*']
   requests:
     host: 54.147.179.0
-    methods: ['GET', 'POST','PUT','DELETE']
-    paths: ['/api/requests/','/api/requests/*']
-
+    methods: ['GET', 'POST','PUT']
+    paths: ['/api/requests/*','/api/requests/']
 serviceEndpoints:
   httpbin:
     url: 'https://httpbin.org'
-  petsServices:
-    url: 'http://34.194.231.115'    
-  requestsServices:
+  petsService:
+    url: 'http://34.194.231.115'
+  requestsService:
     url: 'http://52.2.159.146'
 policies:
   - basic-auth
@@ -43,8 +42,7 @@ pipelines:
           - action:
               serviceEndpoint: httpbin 
               changeOrigin: true
-
-  petsPipeline:
+  petsPipelines:
     apiEndpoints:
       - pets
     policies:
@@ -52,10 +50,9 @@ pipelines:
     # - key-auth:
       - proxy:
           - action:
-              serviceEndpoint: petsServices 
+              serviceEndpoint: petsService 
               changeOrigin: true
-
-  requestsPipeline:
+  requestsPipelines:
     apiEndpoints:
       - requests
     policies:
@@ -63,5 +60,5 @@ pipelines:
     # - key-auth:
       - proxy:
           - action:
-              serviceEndpoint: requestsServices
+              serviceEndpoint: requestsService 
               changeOrigin: true
