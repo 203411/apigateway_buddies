@@ -6,15 +6,19 @@ admin:
 apiEndpoints:
   pets:
     host: 54.147.179.0
-    methods: ['GET', 'POST','PUT']
+    methods: ['GET', 'POST','PUT','DELETE']
     paths: ['/api/pets/','/api/pets/*']
   api:
     host: localhost
     paths: '/ip'
   requests:
     host: 54.147.179.0
-    methods: ['GET', 'POST','PUT']
+    methods: ['GET', 'POST','PUT','DELETE']
     paths: ['/api/requests/*','/api/requests/']
+  owners:
+    host: 3.17.118.106
+    methods: ['GET', 'POST','PUT','DELETE']
+    paths: ['/api/owners/*','/api/owners/']
 serviceEndpoints:
   httpbin:
     url: 'https://httpbin.org'
@@ -22,6 +26,8 @@ serviceEndpoints:
     url: 'http://34.194.231.115'
   requestsService:
     url: 'http://52.2.159.146'
+  ownersService:
+    url: 'http://3.17.118.106'
 policies:
   - basic-auth
   - cors
@@ -61,4 +67,14 @@ pipelines:
       - proxy:
           - action:
               serviceEndpoint: requestsService 
+              changeOrigin: true
+  ownersPipelines:
+    apiEndpoints:
+      - owners
+    policies:
+    # Uncomment `key-auth:` when instructed to in the Getting Started guide.
+    # - key-auth:
+      - proxy:
+          - action:
+              serviceEndpoint: ownersService 
               changeOrigin: true
