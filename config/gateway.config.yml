@@ -5,22 +5,22 @@ admin:
   host: localhost
 apiEndpoints:
   pets:
-    host: 3.130.221.228
+    host: 52.15.206.234
     methods: ['GET', 'POST','PUT','DELETE']
     paths: ['/api/pets/','/api/pets/*']
   api:
     host: localhost
     paths: '/ip'
   requests:
-    host: 3.130.221.228
+    host: 52.15.206.234
     methods: ['GET', 'POST','PUT','DELETE']
     paths: ['/api/requests/*','/api/requests/']
   owners:
-    host: 3.130.221.228
+    host: 52.15.206.234
     methods: ['GET', 'POST','PUT','DELETE']
     paths: ['/api/owners/*','/api/owners/']
   pays:
-    host: 3.130.221.228
+    host: 52.15.206.234
     methods: ['GET', 'POST','PUT']
     paths: ['/api/pays/*','/api/pays/']
 serviceEndpoints:
