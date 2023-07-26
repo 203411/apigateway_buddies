@@ -12,16 +12,16 @@ apiEndpoints:
     host: localhost
     paths: '/ip'
   requests:
-    host: 3.17.237.96
+    host: 3.130.221.228
     methods: ['GET', 'POST','PUT','DELETE']
     paths: ['/api/requests/*','/api/requests/']
   owners:
-    host: 3.17.118.106
+    host: 3.130.221.228
     methods: ['GET', 'POST','PUT','DELETE']
     paths: ['/api/owners/*','/api/owners/']
   pays:
-    host: 18.191.19.83
-    methods: ['GET', 'POST','PUT','DELETE']
+    host: 3.130.221.228
+    methods: ['GET', 'POST','PUT']
     paths: ['/api/pays/*','/api/pays/']
 serviceEndpoints:
   httpbin:
