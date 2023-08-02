@@ -27,11 +27,11 @@ serviceEndpoints:
   httpbin:
     url: 'https://httpbin.org'
   petsService:
-    url: 'http://3.130.221.228'
+    url: 'http://3.145.144.79'
   requestsService:
-    url: 'http://3.17.237.96'
+    url: 'http://3.138.140.247'
   ownersService:
-    url: 'http://3.17.118.106'
+    url: 'http://3.145.198.108'
   paysService:
     url: 'http://18.191.19.83'
 policies:
